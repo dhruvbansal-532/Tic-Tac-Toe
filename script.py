@@ -28,9 +28,12 @@ def button_clicked(button_text):
                     else:
                         current_player='X'
 
-def declare_winner(player):
+def declare_winner(player, winning_cells):
     global game_over
     status_label.configure(text=f'Player {player} won!')
+
+    for index in winning_cells:
+        buttons[index].configure(bg='#8BE9A8')
     game_over=True
 
 def check_draw():
@@ -44,28 +47,28 @@ def check_draw():
 def check_winner():
     
     if buttons[0].cget('text')==buttons[1].cget('text')==buttons[2].cget('text') and buttons[0].cget('text')!='':
-        declare_winner(buttons[0].cget('text'))
+        declare_winner(buttons[0].cget('text'), [0,1,2])
 
     elif buttons[3].cget('text')==buttons[4].cget('text')==buttons[5].cget('text') and buttons[3].cget('text')!='':
-        declare_winner(buttons[3].cget('text'))
+        declare_winner(buttons[3].cget('text'), [3,4,5])
 
     elif buttons[6].cget('text')==buttons[7].cget('text')==buttons[8].cget('text') and buttons[6].cget('text')!='':
-        declare_winner(buttons[6].cget('text'))
+        declare_winner(buttons[6].cget('text'), [6,7,8])
 
     elif buttons[0].cget('text')==buttons[3].cget('text')==buttons[6].cget('text') and buttons[0].cget('text')!='':
-        declare_winner(buttons[0].cget('text'))
+        declare_winner(buttons[0].cget('text'), [0,3,6])
 
     elif buttons[1].cget('text')==buttons[4].cget('text')==buttons[7].cget('text') and buttons[1].cget('text')!='':
-        declare_winner(buttons[1].cget('text'))
+        declare_winner(buttons[1].cget('text'), [1,4,7])
 
     elif buttons[2].cget('text')==buttons[5].cget('text')==buttons[8].cget('text') and buttons[2].cget('text')!='':
-        declare_winner(buttons[2].cget('text'))
+        declare_winner(buttons[2].cget('text'), [2,5,8])
 
     elif buttons[0].cget('text')==buttons[4].cget('text')==buttons[8].cget('text') and buttons[0].cget('text')!='':
-        declare_winner(buttons[0].cget('text'))
+        declare_winner(buttons[0].cget('text'), [0,4,8])
 
     elif buttons[2].cget('text')==buttons[4].cget('text')==buttons[6].cget('text') and buttons[2].cget('text')!='':
-        declare_winner(buttons[2].cget('text'))
+        declare_winner(buttons[2].cget('text'), [2,4,6])
 
 def restart_game():
     global game_over, current_player
@@ -73,7 +76,7 @@ def restart_game():
     current_player='X'
 
     for elt in buttons:
-        elt.configure(text='')
+        elt.configure(text='', bg='#E6F1FF')
     status_label.configure(text='Game in Progress')
 
 restart_button = tk.Button(root, text='Restart Game', command=restart_game, bg='#E6F1FF', fg='#191970', font=('Arial', 12, 'bold'))
