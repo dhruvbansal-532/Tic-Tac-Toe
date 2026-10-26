@@ -2,14 +2,14 @@ import tkinter as tk
 
 root = tk.Tk() 
 root.title('Tic Tac Toe')
-root.geometry('490x600')
+root.geometry('525x680')
 root.configure(bg="#191970")
 
-title_label = tk.Label(root, text='Tic Tac Toe', font=('Arial', 18, 'bold'), bg='#191970', fg='white')
+title_label = tk.Label(root, text='Tic Tac Toe', font=('Segoe UI', 22, 'bold'), bg='#191970', fg='#FFFFFF')
 title_label.grid(row=0, column=0, columnspan=3, pady=10)
 
-status_label = tk.Label(root, text='Current turn: X', font=('Arial', 12, 'bold'), bg='#191970', fg='white')
-status_label.grid(row=4, column=0, columnspan=3, pady=10)
+status_label = tk.Label(root, text='Current turn: X', font=('Segoe UI', 13, 'bold'), bg='#191970', fg='#FFFFFF')
+status_label.grid(row=4, column=0, columnspan=3, pady=8)
 
 buttons = []
 current_player='X'
@@ -81,15 +81,15 @@ def restart_game():
         elt.configure(text='', bg='#E6F1FF')
     status_label.configure(text='Current turn: X')
 
-restart_button = tk.Button(root, text='Restart Game', command=restart_game, bg='#E6F1FF', fg='#191970', font=('Arial', 12, 'bold'))
+restart_button = tk.Button(root, text='Restart Game', command=restart_game, bg='#8BE9A8', fg='#191970', font=('Segoe UI', 12, 'bold'), padx=12, pady=6, activebackground='#6FD995', activeforeground='#191970')
 restart_button.grid(row=5, column=0, columnspan=3)
 
 for row in range(3):
     for column in range(3):
-        button = tk.Button(root, text="", font=('Arial', 20, 'bold'), bg='#E6F1FF', fg='#191970', width=9, height=4)
+        button = tk.Button(root, text="", font=('Segoe UI', 32, 'bold'), bg='#E6F1FF', fg='#191970', width=6, height=2)
         button.configure(command=lambda b=button: button_clicked(b))
         buttons.append(button)
-        button.grid(row=row+1, column=column)
+        button.grid(row=row+1, column=column, padx=4, pady=4)
 
 
 root.mainloop()
