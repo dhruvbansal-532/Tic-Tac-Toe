@@ -8,7 +8,7 @@ root.configure(bg="#191970")
 title_label = tk.Label(root, text='Tic Tac Toe', font=('Arial', 18, 'bold'), bg='#191970', fg='white')
 title_label.grid(row=0, column=0, columnspan=3, pady=10)
 
-status_label = tk.Label(root, text='Game in Progress', font=('Arial', 12, 'bold'), bg='#191970', fg='white')
+status_label = tk.Label(root, text='Current turn: X', font=('Arial', 12, 'bold'), bg='#191970', fg='white')
 status_label.grid(row=4, column=0, columnspan=3, pady=10)
 
 buttons = []
@@ -25,8 +25,10 @@ def button_clicked(button_text):
                 if not game_over:
                     if current_player=='X':
                         current_player='O'
+                        status_label.config(text='Current turn: O')
                     else:
                         current_player='X'
+                        status_label.config(text='Current turn: X')
 
 def declare_winner(player, winning_cells):
     global game_over
@@ -77,7 +79,7 @@ def restart_game():
 
     for elt in buttons:
         elt.configure(text='', bg='#E6F1FF')
-    status_label.configure(text='Game in Progress')
+    status_label.configure(text='Current turn: X')
 
 restart_button = tk.Button(root, text='Restart Game', command=restart_game, bg='#E6F1FF', fg='#191970', font=('Arial', 12, 'bold'))
 restart_button.grid(row=5, column=0, columnspan=3)
