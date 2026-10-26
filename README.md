@@ -16,25 +16,25 @@ A beginner-friendly desktop game where two players take turns placing **X** and 
 
 ![Tic-Tac-Toe game board](./screenshots/game-board.png)
 
-[View Game Board Screenshot](./screenshots/game-board.png)
+The initial game board, ready for two players to start playing.
 
 ### 2. Winning Move
 
 ![Winning cells highlighted in green](./screenshots/win-highlight.png)
 
-[View Winning Move Screenshot](./screenshots/win-highlight.png)
+The winning combination is highlighted in green when a player wins.
 
 ### 3. Restarted Game
 
 ![Fresh game board after restart](./screenshots/restarted-game.png)
 
-[View Restarted Game Screenshot](./screenshots/restarted-game.png)
+The board resets to its initial state when the Restart Game button is clicked.
 
 ### 4. Draw Result
 
 ![Tic-Tac-Toe game ending in a draw](./screenshots/draw-result.png)
 
-[View Draw Result Screenshot](./screenshots/draw-result.png)
+A draw is declared when all nine cells are filled and neither player wins.
 
 ---
 
@@ -89,7 +89,7 @@ cd Tic-Tac-Toe
 python script.py
 ```
 
-If your Python file has a different name, replace `tic_tac_toe.py` with its actual filename.
+
 
 On some systems, use:
 
@@ -122,7 +122,7 @@ Tic-Tac-Toe/
     └── draw-result.png
 ```
 
-If your Python file has a different name, keep your existing filename and update the run command accordingly.
+
 
 ## 🧠 What I Practised
 
